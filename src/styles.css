@@ -1,0 +1,59 @@
+.container {
+  border: 3px solid #ee9595;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 500px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form {
+  width: fit-content;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.current-location {
+  text-align: right;
+}
+
+h1 {
+  font-size: 30px;
+  color: #ee9595;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.date {
+  font-size: 17px;
+}
+
+.temperature {
+  font-size: 30px;
+  color: #ee9595;
+  font-weight: bold;
+}
+
+.metric {
+  color: #ee9595;
+  font-size: 14px;
+}
+
+.today-icon {
+  font-size: 95px;
+  color: #ee9595;
+}
+
+.weather-list {
+  text-align: right;
+  font-size: 14px;
+}
+
+.forecast {
+  text-align: right;
+  color: #ee9595;
+}
+
+.card {
+  font-size: 14px;
+  padding: 10px;
+}
