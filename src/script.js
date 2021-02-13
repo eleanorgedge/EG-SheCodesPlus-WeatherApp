@@ -55,6 +55,10 @@ function showWeatherResults(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#temperature");
   currentTemperature.innerHTML = `${temperature}`;
+  //icon
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
   //decription
   let description = response.data.weather[0].main;
   let currentDescription = document.querySelector("#description");
