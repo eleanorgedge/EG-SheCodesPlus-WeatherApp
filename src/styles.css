@@ -6,6 +6,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.weather-app-wrapper {
+  max-width: 500px;
+  margin: 30px auto;
+}
+
 .form {
   width: fit-content;
   font-size: 14px;
