@@ -17,30 +17,27 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-4 search">
+      <div class="col-9 search">
         <form id="search-form">
-          <input type="search" class="form" placeholder="Enter a location" id="search-input" />
-        </form>
+          <input type="search" class="form-control" placeholder="Enter a location" id="search-input" />
       </div>
-      <div class="col-8 current-location">
-        <h1>Weather in...</h1>
-        <span class="date"></span>
-        <br />
-        <span class="temperature" id="temperature"></span>
-        <span class="metric">
-          <a href="#" id="celcius-link">°C </a> |
-          <a href="#" id="fahrenheit-link">°F </a>
-        </span>
+      <div class="col-3 button">
+        <input type="submit" value="search" class="btn btn-primary" />
       </div>
+      </form>
     </div>
+    </br>
+    <h1>Weather in...</h1>
+    <span class="date"></span>
+    <br />
+    <span class="temperature" id="temperature"></span>
+    <span class="metric">
+      <a href="#" id="celcius-link">°C </a> |
+      <a href="#" id="fahrenheit-link">°F </a>
+    </span>
     <div class="row">
       <div class="col-6">
-        <img 
-          src=""
-          alt=""
-          id="icon"
-          class="float-left"
-        />
+        <img src="" alt="" id="icon" class="float-left" />
       </div>
       <div class="col-6 weather-list">
         <br />
@@ -58,84 +55,7 @@
       </div>
     </div>
     <br />
-    <div class="card">
-      <div class="row">
-        <div class="col-9">
-          Tuesday
-        </div>
-        <div class="col-2 forecast">
-          4° C
-        </div>
-        <div class="col-1 forecast">
-          <i class="fas fa-cloud-showers-heavy"></i>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-9">
-          Wednesday
-        </div>
-        <div class="col-2 forecast">
-          4° C
-        </div>
-        <div class="col-1 forecast">
-          <i class="fas fa-cloud-showers-heavy"></i>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-9">
-          Thursday
-        </div>
-        <div class="col-2 forecast">
-          3° C
-        </div>
-        <div class="col-1 forecast">
-          <i class="fas fa-cloud-showers-heavy"></i>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-9">
-          Friday
-        </div>
-        <div class="col-2 forecast">
-          3° C
-        </div>
-        <div class="col-1 forecast">
-          <i class="fas fa-cloud"></i>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-9">
-          Saturday
-        </div>
-        <div class="col-2 forecast">
-          3° C
-        </div>
-        <div class="col-1 forecast">
-          <i class="fas fa-cloud"></i>
-        </div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="row">
-        <div class="col-9">
-          Sunday
-        </div>
-        <div class="col-2 forecast">
-          3° C
-        </div>
-        <div class="col-1 forecast">
-          <i class="fas fa-snowflake"></i>
-        </div>
-      </div>
-    </div>
+
     <small><a href="https://github.com/eleanorgedge/EG-SheCodesPlus-WeatherApp" target="_blank">
         Open-source code</a>, by Eleanor Gedge.</small>
   </div>
