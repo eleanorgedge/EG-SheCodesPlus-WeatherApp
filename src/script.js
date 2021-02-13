@@ -123,5 +123,5 @@ function showWeatherResults(response) {
   //let apiKey = "b7043ee55acc28581f8a4aa13924596c";
   //let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   //axios.get(apiUrl).then(showGeoResults);
-}
+//}
 //navigator.geolocation.getCurrentPosition(retrievePosition);
