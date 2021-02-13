@@ -15,46 +15,63 @@
 </head>
 
 <body>
-  <div class = "weather-app-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-9 search">
-        <form id="search-form">
-          <input type="search" class="form-control" placeholder="Enter a location" id="search-input" />
-      </div>
-      <div class="col-3 button">
-        <input type="submit" value="search" class="btn btn-primary" />
+  <div class="weather-app-wrapper">
+    <div class="container">
+      <form id="search-form" class="mb-3">
+      <div class="row">
+        <div class="col-8">
+            <input 
+            type="search" 
+            class="form-control" 
+            placeholder="Enter a location" 
+            id="search-input" 
+            />
+        </div>
+        <div class="col-2">
+          <button 
+          type="submit" 
+          class="btn" 
+          id="search-button">
+          <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="col-2">
+          <button 
+          type="submit" 
+          class="btn" 
+          id="geo-button">
+          <i class="fas fa-search-location"></i>
+          </button>
+        </div>
       </div>
       </form>
-    </div>
-    </br>
-    <h1>Weather in...</h1>
-    <span class="date"></span>
-    <br />
-    <span class="temperature" id="temperature"></span>
-    <span class="metric">
-      <a href="#" id="celcius-link">°C </a> |
-      <a href="#" id="fahrenheit-link">°F </a>
-    </span>
-    <div class="row">
-      <div class="col-6">
-        <img src="" alt="" id="icon" class="float-left" />
+      <h1>Weather in...</h1>
+      <span class="date"></span>
+      <br />
+      <span class="temperature" id="temperature"></span>
+      <span class="metric">
+        <a href="#" id="celcius-link">°C </a> |
+        <a href="#" id="fahrenheit-link">°F </a>
+      </span>
+      <div class="row">
+        <div class="col-6">
+          <img src="" alt="" id="icon" class="float-left" />
+        </div>
+        <div class="col-6 weather-list">
+          <br />
+          Description:
+          <span class="Description" id="description"></span>
+          <br />
+          Feels like:
+          <span class="feelsLike" id="feelsLike"></span>°C
+          <br />
+          Humidity:
+          <span class="humidity" id="humidity"></span>%
+          <br />
+          Wind:
+          <span class="windSpeed" id="windSpeed"></span>mph
+        </div>
       </div>
-      <div class="col-6 weather-list">
-        <br />
-        Description:
-        <span class="Description" id="description"></span>
-        <br />
-        Feels like:
-        <span class="feelsLike" id="feelsLike"></span>°C
-        <br />
-        Humidity:
-        <span class="humidity" id="humidity"></span>%
-        <br />
-        Wind:
-        <span class="windSpeed" id="windSpeed"></span>mph
-      </div>
-    </div>
     </div>
     <small><a href="https://github.com/eleanorgedge/EG-SheCodesPlus-WeatherApp" target="_blank">
         Open-source code</a>, by Eleanor Gedge.</small>
