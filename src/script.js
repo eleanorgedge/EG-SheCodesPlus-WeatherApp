@@ -63,7 +63,7 @@ function showSearchResults(response) {
   currentTemperature.innerHTML = `${temperature}`;
   //icon
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
   //decription
   let description = response.data.weather[0].main;
@@ -114,7 +114,7 @@ function showGeoResults(response) {
   geoTemperature.innerHTML = `${temperature}`;
   //icon
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
   //decription
   let description = response.data.weather[0].main;
