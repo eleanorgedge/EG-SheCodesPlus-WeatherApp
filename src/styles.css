@@ -11,8 +11,8 @@
   margin: 20px auto;
 }
 
-.search {
-  font-size: 15px;
+.form-control {
+  font-size: 14px;
 }
 
 .fa-search {
@@ -30,7 +30,7 @@ h1 {
 }
 
 .date {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .temperature {
@@ -41,20 +41,20 @@ h1 {
 
 .metric {
   color: #ee9595;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .weather-list {
   text-align: right;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .forecast {
-  text-align: right;
+  text-align: center;
   color: #ee9595;
 }
 
 .card {
-  font-size: 15px;
-  padding: 10px;
+  font-size: 14px;
+  padding: 8px;
 }
