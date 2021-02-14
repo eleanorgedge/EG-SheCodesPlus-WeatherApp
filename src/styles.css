@@ -1,5 +1,5 @@
 .container {
-  border: 3px solid #ee9595;
+  border: 3px solid #ec6e4c;
   padding: 20px;
   border-radius: 5px;
   max-width: 500px;
@@ -9,6 +9,8 @@
 .weather-app-wrapper {
   max-width: 500px;
   margin: 20px auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
 }
 
 .form-control {
@@ -16,15 +18,15 @@
 }
 
 .fa-search {
-  color: #ee9595;
+  color: #ec6e4c;
 }
 .fa-search-location {
-  color: #ee9595;
+  color: #ec6e4c;
 }
 
 h1 {
   font-size: 30px;
-  color: #ee9595;
+  color: #ec6e4c;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -35,12 +37,12 @@ h1 {
 
 .temperature {
   font-size: 30px;
-  color: #ee9595;
+  color: #ec6e4c;
   font-weight: bold;
 }
 
 .unit {
-  color: #ee9595;
+  color: #ec6e4c;
   font-size: 14px;
   text-decoration: none;
 }
@@ -62,7 +64,7 @@ h1 {
 
 .forecast {
   text-align: center;
-  color: #ee9595;
+  color: #ec6e4c;
 }
 
 .card {
