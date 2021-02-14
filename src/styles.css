@@ -39,9 +39,20 @@ h1 {
   font-weight: bold;
 }
 
-.metric {
+.unit {
   color: #ee9595;
   font-size: 14px;
+  text-decoration: none;
+}
+
+.unit .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.unit .active:hover {
+  text-decoration: none;
 }
 
 .weather-list {

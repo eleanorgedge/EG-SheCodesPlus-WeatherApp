@@ -61,6 +61,7 @@ function showSearchResults(response) {
   let temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#temperature");
   currentTemperature.innerHTML = `${temperature}`;
+  celciusTemperature = response.data.main.temp;
   //icon
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
@@ -83,24 +84,35 @@ function showSearchResults(response) {
   currentWindSpeed.innerHTML = `${windSpeed}`;
 }
 
-////CELSIUS OR FAHRENHEIT
-//function convertToFahrenheit (event){
-//event.preventDefault();
-//let temperatureElement = document.querySelector("#temperature");
-//let temperature= temperatureElement.innerHTML;
-//temperatureElement.innerHTML= 43;
-//}
-//let fahrenheitLink=document.querySelector("#fahrenheit-link");
-//fahrenheitLink.addEventListener("click", convertToFahrenheit);
+////CELCIUS OR FAHRENHEIT
+function convertToFahrenheit (event){
+event.preventDefault();
+let currentTemperature = document.querySelector("#temperature");
+celciusLink.classList.remove("active");
+fahrenheitLink.classList.add("active");
+let fahrenheitTemperature = (celciusTemperature * 9 / 5) +32;
+currentTemperature.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-//function convertToCelcius (event){
-//event.preventDefault();
-//let temperatureElement = document.querySelector("#temperature");
-//let temperature= temperatureElement.innerHTML;
-//temperatureElement.innerHTML=6;
-//}
-//let celciusLink=document.querySelector("#celcius-link");
-//celciusLink.addEventListener("click", convertToCelcius);
+function convertToCelcius (event){
+event.preventDefault();
+let currentTemperature = document.querySelector("#temperature");
+celciusLink.classList.add("active");
+fahrenheitLink.classList.remove("active");
+currentTemperature.innerHTML = Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
+
+let fahrenheitLink=document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+let celciusLink=document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", convertToCelcius);
+
+
+
+
 
 //WEATHER IN GEO LOCATION
 function showGeoResults(response) {
