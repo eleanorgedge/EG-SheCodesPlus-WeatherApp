@@ -1,6 +1,6 @@
 //DAY, DATE, MONTH, TIME
-function formatDate (){
 let now = new Date();
+let dateTime = document.querySelector("#dateTime");
 let date = now.getDate();
 let days = [
   "Sunday",
@@ -36,7 +36,6 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 dateTime.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
-}
 
 //SEARCH BAR
 let form = document.querySelector("#search-form");
@@ -83,9 +82,6 @@ function showSearchResults(response) {
   //wind speed
   let windSpeedElement = document.querySelector("#windSpeed");
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
-  //date and time
-  let dateElement = document.querySelector("#dateTime");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
 //CELCIUS OR FAHRENHEIT
