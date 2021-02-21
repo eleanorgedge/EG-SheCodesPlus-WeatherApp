@@ -37,17 +37,18 @@ if (minutes < 10) {
 }
 dateTime.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
 
-function formatHours(timestamp) {
-  let time = new Date(timestamp);
-  let hours = time.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = time.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${hours}:${minutes}`;
+function formatDay (timestamp){
+let time = new Date(timestamp);
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+return days[time.getDay()];
 }
 
 //SEARCH BAR
@@ -61,6 +62,7 @@ function citySearch(event) {
   h1.innerHTML = `${searchInput.value}`;
   showCity(searchInput.value);
 }
+
 //WEATHER IN SEARCHED LOCATION
 function showCity(city) {
   let apiKey = "b7043ee55acc28581f8a4aa13924596c";
@@ -145,19 +147,19 @@ button.addEventListener("click", getCurrentPosition);
 //FORECAST
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
-  forecast = response.data.daily[0];
+  forecast = response.data.daily[1];
   //console.log(response.data);
   forecastElement.innerHTML = `
   <div class="row 1">
     <div class="col-6 forecast-day">
-      ${formatHours(forecast.dt * 1000)}
+      ${formatDay(forecast.dt*1000)}
     </div>
     <div class="col-4 forecast-temperature">
       ${Math.round(forecast.temp.day)}° C
     </div>
     <div class="col-2 forecast-icon">
       <img src="https://openweathermap.org/img/wn/${
-        response.data.daily[0].weather[0].icon
+        response.data.daily[1].weather[0].icon
       }@2x.png" class="w-100" />
     </div>
   </div>
