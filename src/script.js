@@ -118,6 +118,9 @@ function retrievePosition(position) {
   let apiKey = "b7043ee55acc28581f8a4aa13924596c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showSearchResults);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,alerts&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getCurrentPosition(event) {
@@ -129,72 +132,21 @@ let button = document.querySelector ("#geo-button");
 button.addEventListener("click", getCurrentPosition);
 
 //forcast
-//function displayForecast(response) {
- //console.log(response.data.list[0]);
-//}
-
-//<div class="card">
-//<div class="row">
-//<div class="col-8">
-//Wednesday
-//</div>
-//<div class="col-2 forecast">
-//4° C
-//</div>
-//<div class="col-2 forecast">
-//<i class="fas fa-cloud-showers-heavy"></i>
-//</div>
-//</div>
-//</div>
-//<div class="card">
-//<div class="row">
-//<div class="col-8">
-//Thursday
-//</div>
-//<div class="col-2 forecast">
-//3° C
-//</div>
-//<div class="col-2 forecast">
-//<i class="fas fa-cloud-showers-heavy"></i>
-//</div>
-//</div>
-//</div>
-//<div class="card">
-//<div class="row">
-//<div class="col-8">
-//Friday
-//</div>
-//<div class="col-2 forecast">
-//3° C
-//</div>
-//<div class="col-2 forecast">
-//<i class="fas fa-cloud"></i>
-//</div>
-//</div>
-//</div>
-//<div class="card">
-//<div class="row">
-//<div class="col-8">
-//Saturday
-//</div>
-//<div class="col-2 forecast">
-//3° C
-//</div>
-//<div class="col-2 forecast">
-//<i class="fas fa-cloud"></i>
-//</div>
-//</div>
-//</div>
-//<div class="card">
-//<div class="row">
-//<div class="col-8">
-//Sunday
-//</div>
-//<div class="col-2 forecast">
-//3° C
-//</div>
-//<div class="col-2 forecast">
-//<i class="fas fa-snowflake"></i>
-//</div>
-//</div>
-//</div>
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecast = response.data.daily[0];
+  //console.log(response.data);
+ forecastElement.innerHTML = `
+  <div class="row 1">
+    <div class="col-6 forecast-day">
+      ${forecast.dt}
+    </div>
+    <div class="col-3 forecast-temperature">
+      ${Math.round(forecast.temp.day)}° C
+    </div>
+    <div class="col-3 forecast-icon">
+      <img src="https://openweathermap.org/img/wn/${response.data.daily[0].weather[0].icon}@2x.png"/>
+    </div>
+  </div>
+`
+}
