@@ -1,6 +1,6 @@
 //DAY, DATE, MONTH, TIME
+function formatDate (){
 let now = new Date();
-let span = document.querySelector("span");
 let date = now.getDate();
 let days = [
   "Sunday",
@@ -35,7 +35,8 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-span.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
+dateTime.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
+}
 
 //SEARCH BAR
 let form = document.querySelector("#search-form");
@@ -60,37 +61,34 @@ showCity("London");
 
 function showSearchResults(response) {
   //city
-  let city = response.data.name;
   let cityElement = document.querySelector("h1")
-  cityElement.innerHTML = `${city}`;
+  cityElement.innerHTML = response.data.name;
   //temperature
-  let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `${temperature}`;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
   celciusTemperature = response.data.main.temp;
   //icon
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
   //decription
-  let description = response.data.weather[0].main;
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = `${description}`;
+  descriptionElement.innerHTML = response.data.weather[0].main;
   //feels like
-  let feelsLike = Math.round(response.data.main.feels_like);
   let feelsLikeElement = document.querySelector("#feelsLike");
-  feelsLikeElement.innerHTML = `${feelsLike}`;
+  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   //humidity
-  let humidity = response.data.main.humidity;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = `${humidity}`;
+  humidityElement.innerHTML = response.data.main.humidity;
   //wind speed
-  let windSpeed = Math.round(response.data.wind.speed);
   let windSpeedElement = document.querySelector("#windSpeed");
-  windSpeedElement.innerHTML = `${windSpeed}`;
+  windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
+  //date and time
+  let dateElement = document.querySelector("#dateTime");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-////CELCIUS OR FAHRENHEIT
+//CELCIUS OR FAHRENHEIT
 function convertToFahrenheit (event){
 event.preventDefault();
 let temperatureElement = document.querySelector("#temperature");
