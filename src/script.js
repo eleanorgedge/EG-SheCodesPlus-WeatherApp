@@ -56,6 +56,8 @@ function showCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showSearchResults);
 }
+showCity("London");
+
 function showSearchResults(response) {
   //city
   let city = response.data.name;
@@ -116,7 +118,6 @@ celciusLink.addEventListener("click", convertToCelcius);
 
 //WEATHER IN GEO LOCATION
 function retrievePosition(position) {
-  navigator.geolocation.getCurrentPosition(retrievePosition);
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let units = "metric";
@@ -124,5 +125,12 @@ function retrievePosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showSearchResults);
 }
+
+function getCurrentPosition(event) {
+  event.preventDefault ();
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
 let button = document.querySelector ("#geo-button");
-button.addEventListener("click", retrievePosition);
+button.addEventListener("click", getCurrentPosition);
+
