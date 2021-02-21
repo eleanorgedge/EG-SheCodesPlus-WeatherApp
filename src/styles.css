@@ -62,7 +62,7 @@ h1 {
   font-size: 13px;
 }
 
-.forecast {
+.forecast-temperature .forecast-icon {
   text-align: center;
   color: #1ab2a8;
 }
