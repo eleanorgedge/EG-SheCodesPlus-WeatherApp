@@ -62,12 +62,17 @@ h1 {
   font-size: 13px;
 }
 
+.forecast-day {
+  margin: auto;
+}
+
 .forecast-temperature {
+  margin: auto;
   text-align: center;
-  color: #1ab2a8;
 }
 
 .card {
   font-size: 13px;
-  padding: 8px;
+  color: #1ab2a8;
+  padding: 5px;
 }
