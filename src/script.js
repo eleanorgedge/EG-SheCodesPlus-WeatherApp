@@ -88,7 +88,8 @@ function showSearchResults(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
   //decription
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.weather[0].main;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+    console.log(response.data);
   //feels like
   let feelsLikeElement = document.querySelector("#feelsLike");
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
