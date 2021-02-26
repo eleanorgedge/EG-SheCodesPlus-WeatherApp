@@ -150,13 +150,13 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
-
   for (let index = 1; index < 7; index++) {
-  forecast = response.data.daily[index];
-  forecastElement.innerHTML += `
+    forecast = response.data.daily[index];
+    forecastElement.innerHTML += `
+    <div class="card">
   <div class="row 1">
     <div class="col-6 forecast-day">
-      ${formatDay(forecast.dt*1000)}
+      ${formatDay(forecast.dt * 1000)}
     </div>
     <div class="col-4 forecast-temperature">
       ${Math.round(forecast.temp.day)}° C
@@ -167,6 +167,7 @@ function displayForecast(response) {
       }@2x.png" class="w-100" />
     </div>
   </div>
+  </div>
 `;
-}
+  }
 }
