@@ -60,6 +60,7 @@ h1 {
 .weather-list {
   text-align: right;
   font-size: 13px;
+  text-transform: capitalize;
 }
 
 .forecast-day {
