@@ -2,12 +2,12 @@
   border: 3px solid #fed19a;
   padding: 20px;
   border-radius: 5px;
-  max-width: 500px;
+  max-width: 400px;
   font-family: "Montserrat", sans-serif;
 }
 
 .weather-app-wrapper {
-  max-width: 500px;
+  max-width: 400px;
   margin: 10px auto;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
