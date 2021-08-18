@@ -147,18 +147,22 @@ button.addEventListener("click", getCurrentPosition);
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
+  let forecast = null;
 
- for (let index = 1; index < 7; index++) {
+  for (let index = 1; index < 7; index++) {
   forecast = response.data.daily[index];
   forecastElement.innerHTML += `
-  <div class="col-2">
-      <div class="weather-forecast-date">${formatDay(forecast.dt*1000)}
-    </br>
-      <span>${Math.round(forecast.temp.day)}° C</span>
-    <span> <img src="img/${forecast.weather[0].icon}.png" alt="" class="icon-forecast"/> </span>
+  <div class="row 1">
+    <div class="col-6 forecast-day">
+      ${formatDay(forecast.dt*1000)}
     </div>
+    <div class="col-4 forecast-temperature">
+      ${Math.round(forecast.temp.day)}° C
     </div>
-
-    `;
+    <div class="col-2 forecast-icon">
+      <img src="img/${forecast.weather[0].icon}.png" alt="" class="icon-forecast"/>
+    </div>
+  </div>
+`;
 }
 }
