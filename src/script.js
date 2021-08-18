@@ -40,13 +40,13 @@ dateTime.innerHTML = `${day} ${date} ${month}, ${hours}:${minutes}`;
 function formatDay (timestamp){
 let time = new Date(timestamp);
 let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+  "Sun",
+  "Mon",
+  "Tues",
+  "Wed",
+  "Thurs",
+  "Fri",
+  "Sat",
 ];
 return days[time.getDay()];
 }
@@ -82,9 +82,7 @@ function showSearchResults(response) {
   celciusTemperature = response.data.main.temp;
   //icon
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
   //decription
   let descriptionElement = document.querySelector("#description");
@@ -149,24 +147,18 @@ button.addEventListener("click", getCurrentPosition);
 function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
-  let forecast = null;
 
-  for (let index = 1; index < 7; index++) {
+ for (let index = 1; index < 7; index++) {
   forecast = response.data.daily[index];
   forecastElement.innerHTML += `
-  <div class="row 1">
-    <div class="col-6 forecast-day">
-      ${formatDay(forecast.dt*1000)}
+  <div class="col-2">
+      <div class="weather-forecast-date">${formatDay(forecast.dt*1000)}
+    </br>
+      <span>${Math.round(forecast.temp.day)}° C</span>
+    <span> <img src="img/${forecast.weather[0].icon}.png" alt="" class="icon-forecast"/> </span>
     </div>
-    <div class="col-4 forecast-temperature">
-      ${Math.round(forecast.temp.day)}° C
     </div>
-    <div class="col-2 forecast-icon">
-      <img src="https://openweathermap.org/img/wn/${
-        forecast.weather[0].icon
-      }@2x.png" class="w-100" />
-    </div>
-  </div>
-`;
+
+    `;
 }
 }
